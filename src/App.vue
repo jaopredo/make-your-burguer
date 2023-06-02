@@ -1,10 +1,16 @@
 <template>
-    a
+    <Header/>
+    <router-view/>
+    <Footer/>
 </template>
 
 <script>
+    /* PARTIALS */
+    import Header from './partials/Header.vue'
+    
     export default {
-        name: 'App'
+        name: 'App',
+        components: { Header }
     }
 </script>
 
