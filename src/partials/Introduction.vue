@@ -1,9 +1,9 @@
 <template>
-    <article>
-        <section>
+    <article id="introduction-article">
+        <section id="introduction-text-section">
             <h1>Mobile App<br>Development</h1>
         </section>
-        <section>
+        <section id="introduction-cards-section">
             <ul>
                 <IntroCard v-for="card in cards" v-bind:key="card.key" v-bind="card"/>
             </ul>
@@ -46,6 +46,40 @@
     }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+    @use "../scss/mixins.scss";
 
+    #introduction-article {
+        background-image: url("../assets/notebook-background.jpg");
+        background-repeat: no-repeat;
+        background-size: 100%;
+
+        min-height: 120vh;
+        margin-top: 80px;
+
+        position: relative;
+    }
+
+    #introduction-text-section {
+        h1 {
+            font-size: 7vw;
+            line-height: 120px;
+        }
+        color: white;
+
+        position: absolute;
+        bottom: 130px;
+        left: 80px;
+    }
+
+    #introduction-cards-section {
+        position: absolute;
+        right: 140px;
+        bottom: 80px;
+        width: 35%;
+
+        ul {
+            @include mixins.default-grid(2, 2, 30px);
+        }
+    }
 </style>

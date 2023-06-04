@@ -1,0 +1,24 @@
+@use "sass:math";
+
+@mixin flex($ai:center, $jc:center, $d:row, $g:0px){
+    display: flex;
+    align-items: $ai;
+    justify-content: $jc;
+    flex-direction: $d;
+    gap: $g;
+}
+
+@mixin default-grid($r, $c, $g: 0px) {
+    display: grid;
+
+    grid-template-rows: repeat($r, math.div(100, $r) * 1fr);
+    grid-template-columns: repeat($c, math.div(100, $c) * 1fr);
+    gap: $g;
+
+    @for $i from 1 through $r {
+        &:nth-child(#{$i}) {
+            grid-row-start: $i;
+            grid-row-end: $i + 1;
+        }
+    }
+}

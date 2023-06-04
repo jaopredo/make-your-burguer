@@ -1,5 +1,5 @@
 <template>
-    <article>
+    <article id="advantages-article">
         <h1>We create super-awsome designs</h1>
         <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
         <ul class="advantagesList">
@@ -42,6 +42,31 @@
     }
 </script>
 
-<style>
+<style lang="scss">
+    @use "../scss/cores.scss" as *;
+    @use "../scss/mixins.scss";
 
+    #advantages-article {
+        text-align: center;
+        padding: 70px 0px;
+        background: $default-gray;
+
+        h1 {
+            font-size: 4.3vw;
+        }
+
+        & > p {
+            font-size: 15pt;
+            width: 60%;
+            margin: 10px auto;
+        }
+    }
+
+    .advantagesList {
+        @include mixins.default-grid(2, 2);
+
+        width: 80%;
+        margin: 40px auto;
+        gap: 20px;
+    }
 </style>
