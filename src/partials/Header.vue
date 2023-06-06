@@ -59,6 +59,7 @@
         padding: 20px;
         top: 0;
         z-index: 2;
+        box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.235);
     }
 
     .logo-container a{

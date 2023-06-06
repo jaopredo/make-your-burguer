@@ -17,7 +17,6 @@
 <style lang="scss">
     @use './scss/cores.scss' as *;
     @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
-
     
     *, *::after, *::before {
         padding: 0;
@@ -30,6 +29,10 @@
     a {
         text-decoration: none;
         color: $default-blue;
+
+        padding: 10px 20px;
+        border-radius: 30px;
+        font-family: 'Open Sans';
     }
 
     ul {
