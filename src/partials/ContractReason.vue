@@ -57,22 +57,6 @@
     @use "../scss/cores.scss" as *;
     @use "../scss/mixins.scss";
 
-    .blue-link {
-        display: block;
-        color: white;
-        background: $default-blue;
-        width: fit-content;
-        text-align: center;
-        font-family: 'Open Sans';
-        font-size: 9pt;
-        font-weight: bolder;
-        letter-spacing: 4px;
-
-        &:hover {
-            background: #292929;
-        }
-    }
-
     /* FIRST SECTION */
     #image-container-section {
         width: 60%;
