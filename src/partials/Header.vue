@@ -58,7 +58,7 @@
         background: white;
         padding: 20px;
         top: 0;
-        z-index: 2;
+        z-index: 3;
         box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.235);
     }
 
