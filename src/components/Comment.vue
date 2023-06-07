@@ -1,11 +1,11 @@
 <template>
-    <li>
-        <div>
-            <Icon icon="entypo:quote" color="white" />
+    <li class="comment-card">
+        <div class="comment-card-text-container">
+            <Icon class="quote-icon" icon="entypo:quote" color="white" />
             <p>{{ text }}</p>
         </div>
-        <div>
-            <img :src="photo" :alt="`${name}-perfil-photo`">
+        <div class="comment-card-user-container">
+            <div :id="`photo-${id}`" class="user-photo"></div>
             {{ name }}
         </div>
     </li>
@@ -15,11 +15,49 @@
     import { Icon } from '@iconify/vue';
     export default {
         name: 'comment-component',
-        props: [ 'name', 'text', 'photo' ],
-        components: { Icon }
+        props: [ 'name', 'text', 'photo', 'id' ],
+        components: { Icon },
+        mounted() {
+            const userPhoto = document.getElementById(`photo-${this.id}`)
+            userPhoto.style.backgroundImage = `url('${this.photo}')`
+        }
     }
 </script>
 
-<style>
+<style lang="scss" scoped>
+    @use "../scss/mixins.scss";
+    @use "../scss/cores.scss" as *;
 
+    .quote-icon {
+        font-size: 40pt;
+        margin-bottom: 30px;
+    }
+
+    .comment-card {
+        @include mixins.flex($d: column, $g: 20px);
+    }
+
+    .user-photo {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        border: 5px solid $default-blue;
+
+        background-size: 100%;
+    }
+
+    .comment-card-user-container {
+        @include mixins.flex($jc: flex-start, $g: 20px);
+        align-self: flex-start;
+        font-size: 14pt;
+    }
+
+    .comment-card-text-container {
+        background: $default-blue;
+        border-radius: 30px;
+        padding: 30px;
+        color: white;
+        font-size: 13pt;
+        line-height: 130%;
+    }
 </style>

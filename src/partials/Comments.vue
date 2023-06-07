@@ -1,8 +1,8 @@
 <template>
-    <article>
+    <article id="comments-article">
         <h1>How We Help People</h1>
         <p>With serious savings, a seamless online application, and unique community benefits, our members have a lot to say about our loans!</p>
-        <ul>
+        <ul id="comments-list-container">
             <Comment v-for="comment in commentsList" v-bind:key="comment.id" v-bind="comment" />
         </ul>
     </article>
@@ -41,6 +41,32 @@
     }
 </script>
 
-<style>
+<style lang="scss" scoped>
+    @use "../scss/mixins.scss";
+    @use "../scss/cores.scss" as *;
 
+    #comments-article {
+        @include mixins.flex($d: column);
+
+        background-color: $default-gray;
+        padding: 40px;
+        margin-top: 100px;
+
+        h1 {
+            font-size: 50pt;
+            font-weight: 100;
+        }
+
+        p {
+            width: 70%;
+            font-size: 16pt;
+            text-align: center;
+        }
+    }
+
+    #comments-list-container {
+        @include mixins.flex($g: 20px);
+        margin-top: 30px;
+        width: 85%;
+    }
 </style>
