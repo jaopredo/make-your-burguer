@@ -1,16 +1,10 @@
 <template>
-    <Header/>
     <router-view/>
-    <Footer/>
 </template>
 
 <script>
-    /* PARTIALS */
-    import Header from './partials/Header.vue'
-    
     export default {
-        name: 'App',
-        components: { Header }
+        name: 'App'
     }
 </script>
 
@@ -18,6 +12,10 @@
     @use './scss/cores.scss' as *;
     @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
     
+    #app {
+        min-height: 100vh;
+    }
+
     *, *::after, *::before {
         padding: 0;
         margin: 0;
@@ -52,10 +50,6 @@
 
     ul {
         list-style: none;
-    }
-
-    ::-webkit-scrollbar-thumb {
-        background: transparent;
     }
 
     h1, h2, h3 {

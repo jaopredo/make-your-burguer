@@ -53,6 +53,7 @@
         background-image: url("../assets/notebook-background.jpg");
         background-repeat: no-repeat;
         background-size: 100%;
+        background-attachment: fixed;
 
         min-height: 120vh;
         margin-top: 80px;

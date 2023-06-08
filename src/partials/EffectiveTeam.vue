@@ -20,6 +20,7 @@
     @use "../scss/cores.scss" as *;
 
     #effective-team-article {
+        padding-top: 100px;
         background-color: $default-gray;
         height: 150vh;
         position: relative;
@@ -45,12 +46,13 @@
             content: "";
             display: block;
             background-color: $default-blue;
-            width: 1000px;
+            width: 800px;
             height: 600px;
             border-radius: 30px;
 
             position: absolute;
             bottom: -50px;
+            right: -50px;
 
             transform: translateZ(-1px);
         }
@@ -67,7 +69,7 @@
 
         position: absolute;
         left: 100px;
-        bottom: 300px;
+        bottom: 250px;
 
         h1 {
             font-size: 36pt;

@@ -1,4 +1,5 @@
 <template>
+    <Header/>
     <main>
         <Introduction/>
         <Advantages/>
@@ -11,6 +12,8 @@
 </template>
 
 <script>
+    import Header from '@/partials/Header.vue'
+
     import Introduction from '../partials/Introduction.vue'
     import Advantages from '../partials/Advantages.vue'
     import ContractReason from '../partials/ContractReason.vue'
@@ -24,6 +27,8 @@
         name: 'home-view',
 
         components: {
+            Header,
+            
             Introduction,
             Advantages,
             ContractReason,
@@ -35,7 +40,3 @@
         }
     }
 </script>
-
-<style>
-
-</style>
