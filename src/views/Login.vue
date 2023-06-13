@@ -20,7 +20,7 @@
                         <div class="input-wrapper">
                             <Icon class="input-icon" icon="uil:padlock"/>
                             <input v-model="form.password" :type="passwType" name="password" id="password">
-                            <button id="icon-button" @click="eyeClick"><Icon id="eye" :icon="eyeState"/></button>
+                            <button id="icon-button" type="button" @click="eyeClick"><Icon id="eye" :icon="eyeState"/></button>
                         </div>
                         <a href="#">Forget Password?</a>
                     </div>

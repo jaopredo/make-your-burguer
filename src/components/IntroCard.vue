@@ -24,9 +24,9 @@
         @include mixins.flex($d: column);
 
         background: white;
-        height: 190px;
+        height: 25vh;
         border-radius: 20px;
-        font-size: 17pt;
+        font-size: 1.9vw;
         padding: 20px;
 
         box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.56);
@@ -37,7 +37,7 @@
     }
 
     .intro-card-icon {
-        font-size: 60pt;
+        font-size: 6vw;
         color: $default-blue;
         background: $default-gray;
         border-radius: 50%;

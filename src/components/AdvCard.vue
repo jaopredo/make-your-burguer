@@ -31,12 +31,16 @@
 
         h2 {
             font-family: 'Open Sans', sans-serif;
+            font-size: 2vw;
             margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.3vw;
         }
     }
 
     .advantage-card-icon {
-        font-size: 70pt;
+        font-size: 3.5vw;
         align-self: flex-start;
     }
 </style>

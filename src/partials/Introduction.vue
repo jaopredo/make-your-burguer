@@ -52,11 +52,10 @@
     #introduction-article {
         background-image: url("../assets/notebook-background.jpg");
         background-repeat: no-repeat;
-        background-size: 100%;
+        background-size: 130% 110vh;
         background-attachment: fixed;
 
         min-height: 120vh;
-        margin-top: 80px;
 
         position: relative;
     }
@@ -64,7 +63,7 @@
     #introduction-text-section {
         h1 {
             font-size: 7vw;
-            line-height: 120px;
+            line-height: 120%;
         }
         color: white;
 

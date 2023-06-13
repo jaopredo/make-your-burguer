@@ -1,16 +1,18 @@
 <template>
     <article>
         <section id="image-container-section">
-            <div>
-                <h2>Why choose UX studio as your app design partner? </h2>
-                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.</p>
-                <a href="#">LEARN MORE</a>
+            <div id="image-container-section-wrapper">
+                <div>
+                    <h2>Why choose UX studio as your app design partner? </h2>
+                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.</p>
+                    <a href="#">LEARN MORE</a>
+                </div>
+                <img id="notebook-man" :src="ManNotebook" alt="Man with notebook">
             </div>
-            <img id="notebook-man" :src="ManNotebook" alt="Man with notebook">
         </section>
         <section id="informations-container-section">
             <div class="section-wrapper">
-                <img id="cellphone" :src="Cellphone" alt="Cellphone">
+                <div id="cellphone"/>
                 <div class="div-text">
                     <h1>Build your dream<br>website today</h1>
                     <p>Article evident arrived express highest men did boy. Mistress sensible entirely am so. Quick can manor smart money hopes worth too. Comfort produce husband boy her had hearing. Law others theirs passed but wishes. You day real less till dear read. </p>
@@ -39,7 +41,6 @@
 <script>
     import { Icon } from '@iconify/vue'
     import ManNotebook from '@/assets/man-notebook.jpg'
-    import Cellphone from '@/assets/cellphone.png'
 
     export default {
         name: 'contract-reason-article',
@@ -47,45 +48,51 @@
         data() {
             return {
                 ManNotebook,
-                Cellphone
             }
         }
     }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
     @use "../scss/cores.scss" as *;
     @use "../scss/mixins.scss";
+    @use "sass:math";
 
     /* FIRST SECTION */
-    #image-container-section {
-        width: 60%;
-        margin-left: 150px;
+    #image-container-section-wrapper {
         position: relative;
-        margin-top: 30px;
-        color: white;
+
         background: $default-blue;
-        border-radius: 20px;
+        border-radius: 30px;
         padding: 30px;
-        height: 510px;
+
+        margin-top: 130px;
+
+        width: 60%;
+        height: 100%;
+        max-height: 800px;
 
         div {
+            color: white;
+            width: 50%;
+            height: 100%;
+
             position: absolute;
-            top: 80px;
-            left: 80px;
-            width: 65%;
+
+            left: 5%;
+            top: 10%;
 
             h2 {
-                font-size: 20pt;
-                letter-spacing: 2px;
+                font-size: 2.2vw;
+                letter-spacing: 2%;
                 width: 70%;
             }
 
             p {
-                font-size: 14pt;
+                font-size: 1.4vw;;
                 margin-top: 20px;
                 width: 70%;
-                line-height: 30px;
+                line-height: 130%;
             }
 
             a {
@@ -94,10 +101,10 @@
                 margin-top: 30px;
                 color: white;
                 border: 1px solid white;
-                width: 200px;
+                width: 40%;
                 letter-spacing: 4px;
                 font-weight: bold;
-                font-size: 9pt;
+                font-size: .9vw;
 
                 &:hover {
                     background: white;
@@ -107,18 +114,26 @@
         }
     }
 
+    #image-container-section {
+        @include mixins.flex();
+        
+        width: 100%;
+        height: 80vh; 
+    }   
+
     #notebook-man {
         position: absolute;
-        width: 550px;
+        width: 30vw;
         border-radius: 20px;
-        right: -30%;
-        bottom: -80px;
+        right: -50px;
+        bottom: -50px;
     }
 
     /* SECOND SECTION */
     #informations-container-section {
         @include mixins.flex();
         margin-top: 150px;
+        height: 100vh;
     }
 
     .section-wrapper {
@@ -127,56 +142,63 @@
         margin-left: 120px;
     }
 
-    .div-text {
+    .div-text { 
         width:  50%;
         h1 {
-            font-size: 40pt;
+            font-size: 4vw;
             font-weight: 100;
         }
         p {
             width: 70%;
             margin-top: 30px;
-            font-size: 12pt;
+            font-size: 1.3vw;
         }
 
         ul {
             margin: 20px 0px;
-            font-size: 16pt;
-        }
-
-        &::before {
-            content: "";
-            display: block;
-            position: absolute;
-            width: 300px;
-            height: 300px;
-            background: $default-blue;
-            border-radius: 50%;
-            position: absolute;
-            z-index: 0;
-
-            left: 130px;
-            bottom: 100px;
+            font-size: 1.6vw;
         }
     }
     
+    $cellphone-before-size: 15vw;
     #cellphone {
         display: block;
-        width: 300px;
-        z-index: 1;
+        width: $cellphone-before-size * 1.5;
+        height: $cellphone-before-size * 1.5;
+        background: $default-blue;
+        border-radius: 50%;
+        position: relative;
+
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+
+            width: 20vw;
+            height: 37vw;
+            z-index: 1;
+
+            background-image: url("../assets/cellphone.png");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%)
+        }
     }
 
     /* THIRD SECTION */
     #get-started-container-section {
         @include mixins.flex();
         background-color: $default-gray;
-        height: 250px;
+        height: 30vh;
         margin-top: 100px;
     }
 
     #cellphone-icon {
         background: $default-blue;
-        font-size: 40pt;
+        font-size: 4vw;
         border-radius: 50%;
     }
 
@@ -185,18 +207,19 @@
         position: relative;
         background: white;
         width: 80%;
-        padding: 30px;
+        height: 80%;
+        padding: 3vw;
 
-        font-size: 18pt;
+        font-size: 1.35vw;
 
         div h1 {
-            font-size: 39pt;
+            font-size: 3.9vw;
             font-weight: 100;
         }
 
         a {
             position: absolute;
-            right: 40px;
+            right: 4vw;
         }
     }
 </style>

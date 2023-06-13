@@ -42,7 +42,7 @@
     }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
     @use "../scss/cores.scss" as *;
     @use "../scss/mixins.scss";
 

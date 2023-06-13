@@ -28,8 +28,8 @@
         text-decoration: none;
         color: $default-blue;
 
-        padding: 10px 20px;
-        border-radius: 30px;
+        padding: 1vw 2vw;
+        border-radius: 3vw;
         font-family: 'Open Sans';
     }
     .blue-link {
@@ -39,9 +39,9 @@
         width: fit-content;
         text-align: center;
         font-family: 'Open Sans';
-        font-size: 9pt;
+        font-size: .9vw;
         font-weight: bolder;
-        letter-spacing: 4px;
+        letter-spacing: 4%;
 
         &:hover {
             background: #292929;

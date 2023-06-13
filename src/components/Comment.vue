@@ -29,7 +29,7 @@
     @use "../scss/cores.scss" as *;
 
     .quote-icon {
-        font-size: 40pt;
+        font-size: 4vw;
         margin-bottom: 30px;
     }
 
@@ -37,9 +37,10 @@
         @include mixins.flex($d: column, $g: 20px);
     }
 
+    $user-photo-size: 5vw;
     .user-photo {
-        width: 70px;
-        height: 70px;
+        width: $user-photo-size;
+        height: $user-photo-size;
         border-radius: 50%;
         border: 5px solid $default-blue;
 
@@ -49,7 +50,7 @@
     .comment-card-user-container {
         @include mixins.flex($jc: flex-start, $g: 20px);
         align-self: flex-start;
-        font-size: 14pt;
+        font-size: 1.4vw;
     }
 
     .comment-card-text-container {
@@ -57,7 +58,7 @@
         border-radius: 30px;
         padding: 30px;
         color: white;
-        font-size: 13pt;
+        font-size: 1.3vw;
         line-height: 130%;
     }
 </style>

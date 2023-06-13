@@ -53,13 +53,13 @@
         margin-top: 100px;
 
         h1 {
-            font-size: 50pt;
+            font-size: 5vw;
             font-weight: 100;
         }
 
         p {
             width: 70%;
-            font-size: 16pt;
+            font-size: 1.6vw;
             text-align: center;
         }
     }

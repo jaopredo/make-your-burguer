@@ -44,7 +44,7 @@
 
     #login-icon {
         color: white;
-        font-size: 30pt;
+        font-size: 3.1vw;
         background: $default-blue;
         border-radius: 50%;
     }
@@ -54,27 +54,29 @@
         
         position: fixed;
         width: 100%;
-        height: 80px;
+        height: 10vh;
         background: white;
         padding: 20px;
         top: 0;
         z-index: 3;
+        margin-top: 0;
         box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.235);
+
+        a {
+            font-size: 1.5vw;
+        }
     }
 
     .logo-container a{
         @include mixins.flex();
-
-        h1 {
-            font-size: 18pt;
-        }
+        font-size: 1.8vw;
 
         &:visited {
             color: $default-blue;
         }
 
         img {
-            width: 50px;
+            height: 7vh;
             transition: transform 500ms;
             &:hover { transform: scale(1.1) }
         }

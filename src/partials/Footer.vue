@@ -116,16 +116,16 @@
         height: 100%;
         width: 70%;
         h1 {
-            font-size: 40pt;
+            font-size: 4vw;
             font-weight: 100;
         }
         p {
             line-height: 170%;
-            font-size: 14pt;
+            font-size: 1.4vw;
         }
         ul {
             @include mixins.flex($g: 20px);
-            font-size: 30pt;
+            font-size: 3vw;
         }
     }
 
@@ -142,7 +142,7 @@
         button {
             padding: 15px;
             width: 100%;
-            font-size: 105%;
+            font-size: 1.5vw;
 
             &:hover {
                 background-color: color.adjust(#F0F0F0, $red: $color-adjust, $green: $color-adjust, $blue: $color-adjust);
@@ -161,6 +161,7 @@
 
         label {
             font-weight: bold;
+            font-size: 1.3vw;
         }
 
         input, textarea {
@@ -170,7 +171,7 @@
             border-bottom: 3px solid white;
             background-color: $default-blue;
             resize: none;
-            font-size: 13pt;
+            font-size: 1.3vw;
             
             &::placeholder {
                 color: #869FDA;

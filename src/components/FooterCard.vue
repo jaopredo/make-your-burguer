@@ -30,12 +30,16 @@
 
         height: 230px;
 
-        h1 {
+        h2 {
             font-weight: 100;
+            font-size: 1.9vw;
+        }
+        p {
+            font-size: .9vw;
         }
     }
 
     .footer-card-icon {
-        font-size: 50pt;
+        font-size: 5vw;
     }
 </style>
