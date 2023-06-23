@@ -41,7 +41,7 @@
                     </div>
                     <button id="send-button">SEND</button>
                 </form>
-                <div id="singup-wrapper">
+                <div id="signup-wrapper">
                     <p>Already have an account?</p>
                     <router-link to="login">LOGIN</router-link>
                 </div>

@@ -1,4 +1,5 @@
 @use "../cores.scss" as *;
+@use "../responsividade.scss" as resp;
 @use "../mixins.scss";
 @use "sass:color";
 
@@ -6,27 +7,13 @@ $main-color: rgb(100, 100, 247);
 
 #login-form-container {
     @include mixins.flex();
-    // background-image: url("../assets/notebook-background.jpg");
-    // background-repeat: no-repeat;
-    // background-attachment: fixed;
-    // background-size: 100%;
     background: $main-color;
     min-height: 100vh;
-
-    // &::after {
-    //     content: "";
-    //     width: 100vw;
-    //     height: 100vh;
-    //     display: block;
-    //     position: absolute;
-    //     top: 0;
-    //     left: 0;
-    //     background: rgba(255, 255, 255, 0.042);
-    //     backdrop-filter: blur(10px);
-    //     z-index: 0;
-    // }
 }
 #login-form-wrapper {
+    @include resp.cellphone {
+        width: 95vw;
+    }
     @include mixins.flex($d: column);
     z-index: 1;
     background: white;
@@ -41,6 +28,7 @@ $main-color: rgb(100, 100, 247);
     position: relative;
 
     h1 {
+        @include resp.cellphone { font-size: 15pt; }
         font-size: 3vw;
     }
 }
@@ -56,7 +44,7 @@ $main-color: rgb(100, 100, 247);
         left: 20%;
     }
     to {
-        left: 70%;
+        left: 80%;
         opacity: 1;
     }
 }
@@ -68,11 +56,13 @@ $main-color: rgb(100, 100, 247);
     position: relative;
     
     #back-icon-icon {
+        @include resp.cellphone { font-size: 22pt; }
         font-size: 3vw;
         background: $main-color;
         z-index: 1;
     }
     .go-back-text {
+        @include resp.cellphone { font-size: 13pt; }
         position: absolute;
         font-size: 2vw;
         opacity: 0;
@@ -90,11 +80,17 @@ $main-color: rgb(100, 100, 247);
     width: 100%;
 
     label {
+        @include resp.cellphone {
+            font-size: 9pt;
+        }
         font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
         align-self: flex-start;
         font-size: 1.4vw;
     }
     a {
+        @include resp.cellphone {
+            font-size: 8pt;
+        }
         align-self: flex-end;
         font-weight: bold;
         display: block;
@@ -104,6 +100,9 @@ $main-color: rgb(100, 100, 247);
 }
 
 #login-form {
+    @include resp.cellphone {
+        width: 100%;
+    }
     @include mixins.flex($d: column, $g: 10px);
     width: 70%;
 }
@@ -117,6 +116,10 @@ $input-width: 200px;
     width: 100%;
 
     input {
+        @include resp.cellphone {
+            font-size: 11pt;
+            padding: 8px;
+        }
         flex-grow: 1;
 
         font-size: $input-size;
@@ -126,6 +129,9 @@ $input-width: 200px;
     }
 }
 .input-icon {
+    @include resp.cellphone {
+        font-size: 13pt;
+    }
     font-size: $input-size + .5vw;
 }
 
@@ -141,6 +147,9 @@ $input-width: 200px;
 
 $button-color-adjust: -30;
 #send-button {
+    @include resp.cellphone {
+        font-size: 10pt;
+    }
     width: 100%;
     background-color: $main-color;
     color: white;
@@ -155,7 +164,8 @@ $button-color-adjust: -30;
     }
 }
 
-#singup-wrapper {
+#signup-wrapper {
+    @include resp.cellphone { font-size: 10pt; }
     @include mixins.flex($d: column);
 
     font-size: 1.15vw;

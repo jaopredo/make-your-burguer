@@ -26,7 +26,7 @@
                     </div>
                     <button id="send-button">SEND</button>
                 </form>
-                <div id="singup-wrapper">
+                <div id="signup-wrapper">
                     <p>New here?</p>
                     <router-link to="signup">CREATE ACCOUNT</router-link>
                 </div>

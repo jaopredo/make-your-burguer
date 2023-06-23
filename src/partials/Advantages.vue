@@ -43,6 +43,7 @@
 </script>
 
 <style lang="scss" scoped>
+    @use "../scss/responsividade.scss" as resp;
     @use "../scss/cores.scss" as *;
     @use "../scss/mixins.scss";
 
@@ -52,10 +53,19 @@
         background: $default-gray;
 
         h1 {
+            @include resp.tablet {
+                font-size: 5.5vw;
+            }
+            @include resp.cellphone {
+                font-size: 24pt;
+            }
             font-size: 4.3vw;
         }
 
         & > p {
+            @include resp.cellphone {
+                font-size: 11pt;
+            }    
             font-size: 15pt;
             width: 60%;
             margin: 10px auto;
@@ -63,6 +73,9 @@
     }
 
     .advantagesList {
+        @include resp.cellphone {
+            @include mixins.flex($d: column, $g: 10px);
+        }
         @include mixins.default-grid(2, 2);
 
         width: 80%;

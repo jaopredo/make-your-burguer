@@ -17,10 +17,16 @@
 
 <style lang="scss" scoped>
     @use "../scss/mixins.scss";
+    @use "../scss/responsividade.scss" as resp;
     @use "../scss/cores.scss" as *;
     @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
 
     .intro-card {
+        @include resp.cellphone {
+            width: 100%;
+
+            font-size: 14pt;
+        }
         @include mixins.flex($d: column);
 
         background: white;
@@ -37,6 +43,12 @@
     }
 
     .intro-card-icon {
+        @include resp.tablet {
+            font-size: 10vw;
+        }
+        @include resp.cellphone {
+            font-size: 100pt;
+        }
         font-size: 6vw;
         color: $default-blue;
         background: $default-gray;

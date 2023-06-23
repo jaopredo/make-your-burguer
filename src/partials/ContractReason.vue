@@ -55,11 +55,16 @@
 
 <style lang="scss" scoped>
     @use "../scss/cores.scss" as *;
+    @use "../scss/responsividade.scss" as resp;
     @use "../scss/mixins.scss";
     @use "sass:math";
 
     /* FIRST SECTION */
     #image-container-section-wrapper {
+        @include resp.tablet {
+            width: 80%;
+            max-height: 450px;
+        }
         position: relative;
 
         background: $default-blue;
@@ -73,6 +78,12 @@
         max-height: 800px;
 
         div {
+            @include resp.tablet {
+                width: 100%;
+            }
+            @include resp.cellphone {
+                position: static;
+            }
             color: white;
             width: 50%;
             height: 100%;
@@ -83,12 +94,24 @@
             top: 10%;
 
             h2 {
+                @include resp.tablet {
+                    font-size: 3.5vw;
+                    width: 65%;
+                }
+                @include resp.cellphone {
+                    font-size: 16.5pt;
+                    width: 100%;
+                }
                 font-size: 2.2vw;
                 letter-spacing: 2%;
                 width: 70%;
             }
 
             p {
+                @include resp.cellphone {
+                    width: 100%;
+                    font-size: 12pt;
+                }
                 font-size: 1.4vw;;
                 margin-top: 20px;
                 width: 70%;
@@ -96,6 +119,15 @@
             }
 
             a {
+                @include resp.tablet {
+                    width: 150px;
+                }
+                @include resp.cellphone {
+                    font-size: 10pt;
+                    width: 200px;
+                    border-radius: 40px;
+                    padding: 10px;
+                }
                 display: block;
                 text-align: center;
                 margin-top: 30px;
@@ -115,6 +147,9 @@
     }
 
     #image-container-section {
+        @include resp.tablet {
+            height: 130vh;
+        }
         @include mixins.flex();
         
         width: 100%;
@@ -122,6 +157,19 @@
     }   
 
     #notebook-man {
+        @include resp.tablet {
+            width: 40vw;
+            left: 0;
+            right: auto;
+            bottom: 0;
+            transform: translate(50%, 70%);
+        }
+        @include resp.cellphone {
+            width: 60vw;
+            height: auto;
+            transform: translate(15%, 80%);
+        }
+
         position: absolute;
         width: 30vw;
         border-radius: 20px;
@@ -131,12 +179,25 @@
 
     /* SECOND SECTION */
     #informations-container-section {
+        @include resp.tablet {
+            padding-top: 100px;
+        }
+        @include resp.cellphone {
+            height: 180vh;
+            width: 100vw;
+        }
         @include mixins.flex();
         margin-top: 150px;
         height: 100vh;
     }
 
     .section-wrapper {
+        @include resp.cellphone {
+            flex-direction: column;
+            gap: 100px;
+            margin: auto;
+        }
+
         @include mixins.flex($g: 50px);
         position: relative;
         margin-left: 120px;
@@ -145,16 +206,25 @@
     .div-text { 
         width:  50%;
         h1 {
+            @include resp.cellphone {
+                font-size: 17pt;
+            }
             font-size: 4vw;
             font-weight: 100;
         }
         p {
+            @include resp.cellphone {
+                font-size: 7.5pt;
+            }
             width: 70%;
             margin-top: 30px;
             font-size: 1.3vw;
         }
 
         ul {
+            @include resp.cellphone {
+                font-size: 8pt;
+            }
             margin: 20px 0px;
             font-size: 1.6vw;
         }
@@ -162,6 +232,10 @@
     
     $cellphone-before-size: 15vw;
     #cellphone {
+        @include resp.cellphone {
+            width: 50vw;
+            height: 50vw;
+        }
         display: block;
         width: $cellphone-before-size * 1.5;
         height: $cellphone-before-size * 1.5;
@@ -170,6 +244,10 @@
         position: relative;
 
         &::after {
+            @include resp.cellphone {
+                width: 100%;
+                height: 170%;
+            }
             content: "";
             display: block;
             position: absolute;
@@ -190,19 +268,31 @@
 
     /* THIRD SECTION */
     #get-started-container-section {
+        @include resp.cellphone {
+            min-height: 500px;
+            max-height: 600px;
+        }
         @include mixins.flex();
         background-color: $default-gray;
         height: 30vh;
-        margin-top: 100px;
     }
 
     #cellphone-icon {
+        @include resp.cellphone {
+            font-size: 50pt;
+        }
         background: $default-blue;
         font-size: 4vw;
         border-radius: 50%;
     }
 
     #wrapper {
+        @include resp.cellphone {
+            justify-content: center;
+            flex-direction: column;
+            font-size: 9pt;
+            text-align: center;
+        }
         @include mixins.flex($jc: flex-start, $g: 30px);
         position: relative;
         background: white;
@@ -213,11 +303,18 @@
         font-size: 1.35vw;
 
         div h1 {
+            @include resp.cellphone { font-size: 28pt; }
             font-size: 3.9vw;
             font-weight: 100;
         }
 
         a {
+            @include resp.cellphone {
+                position: static;
+                font-size: 11pt;
+                padding: 20px;
+                border-radius: 40px;
+            }
             position: absolute;
             right: 4vw;
         }

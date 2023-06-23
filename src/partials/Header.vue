@@ -22,8 +22,7 @@
             </router-link>
         </div>
         <div class="login-container" v-if="!logged">
-            <router-link to="/login">Login</router-link>
-            <Icon id="login-icon" icon="ion:person" />
+            <router-link to="/login"><span class="text">Login</span> <Icon id="login-icon" icon="ion:person" /></router-link>
         </div>
     </header>
 </template>
@@ -31,6 +30,7 @@
 <style lang="scss" scoped>
     @use "../scss/mixins.scss";
     @use "../scss/cores.scss" as *;
+    @use "../scss/responsividade.scss" as resp;
 
     .login-container {
         @include mixins.flex($g: 5px);
@@ -40,9 +40,15 @@
             transform: scale(1.1);
             cursor: pointer;
         }
+        a {
+            @include mixins.flex($g: 15px);
+        }
     }
 
     #login-icon {
+        @include resp.cellphone {
+            font-size: 30pt;
+        }
         color: white;
         font-size: 3.1vw;
         background: $default-blue;
@@ -61,13 +67,14 @@
         z-index: 3;
         margin-top: 0;
         box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.235);
+    }
 
-        a {
-            font-size: 1.5vw;
-        }
+    .text {
+        @include resp.cellphone { display: none; }
     }
 
     .logo-container a{
+        
         @include mixins.flex();
         font-size: 1.8vw;
 

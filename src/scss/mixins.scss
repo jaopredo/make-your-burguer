@@ -22,15 +22,3 @@
         }
     }
 }
-
-@mixin tablet {
-    @media only screen and (min-width: 1024px) {@content;}
-}
-
-@mixin cellphone {
-    @media only screen and (max-width: 600px) {@content;}
-}
-
-@mixin tv {
-    @media only screen and (min-width: 1200px) {@content;}
-}

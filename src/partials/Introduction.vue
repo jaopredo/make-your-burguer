@@ -48,8 +48,23 @@
 
 <style lang="scss" scoped>
     @use "../scss/mixins.scss";
+    @use "../scss/responsividade.scss" as resp;
 
     #introduction-article {
+        @include resp.tablet {
+            @include mixins.default-grid(2, 1);
+            gap: 20px;
+            height: 130vh;
+            padding: 30px;
+        }
+
+        @include resp.cellphone {
+            background-size: 1100px 600px;
+            background-position: 50% 50%;
+            padding: 10px;
+            margin-top: 10vh;
+        }
+
         background-image: url("../assets/notebook-background.jpg");
         background-repeat: no-repeat;
         background-size: 130% 110vh;
@@ -61,9 +76,24 @@
     }
 
     #introduction-text-section {
+        @include resp.tablet {
+            position: relative;
+            left: auto;
+            bottom: auto
+        }
+
         h1 {
+            @include resp.tablet {
+                font-size: 10vw;
+                position: absolute;
+                bottom: 0;
+            }
+            @include resp.cellphone {
+                font-size: 25pt;
+            }
             font-size: 7vw;
             line-height: 120%;
+            text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.418);
         }
         color: white;
 
@@ -73,12 +103,26 @@
     }
 
     #introduction-cards-section {
+        @include resp.tablet {
+            position: relative;
+            right: auto;
+            bottom: auto;
+            width: 70%;
+        }
+        @include resp.cellphone {
+            width: 100%;
+            position: static;
+        }
         position: absolute;
         right: 140px;
         bottom: 80px;
         width: 35%;
 
         ul {
+            @include resp.cellphone {
+                @include mixins.flex($d: column, $g: 10px);
+                width: 100%;
+            }
             @include mixins.default-grid(2, 2, 30px);
         }
     }

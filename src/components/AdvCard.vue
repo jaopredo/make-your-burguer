@@ -18,6 +18,7 @@
 </script>
 
 <style lang="scss" scoped>
+    @use "../scss/responsividade.scss" as resp;
     @use "../scss/mixins.scss";
     @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
 
@@ -30,16 +31,32 @@
         text-align: justify;
 
         h2 {
+            @include resp.tablet {
+                font-size: 2.7vw;
+            }
+            @include resp.cellphone {
+                font-size: 13pt;
+            }
+
             font-family: 'Open Sans', sans-serif;
             font-size: 2vw;
             margin-bottom: 20px;
         }
         p {
+            @include resp.tablet {
+                font-size: 1.7vw;
+            }
+            @include resp.cellphone {
+                font-size: 10pt;
+            }
             font-size: 1.3vw;
         }
     }
 
     .advantage-card-icon {
+        @include resp.tablet {
+            font-size: 10vw;
+        }
         font-size: 3.5vw;
         align-self: flex-start;
     }

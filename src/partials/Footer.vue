@@ -79,9 +79,11 @@
 <style lang="scss" scoped>
     @use "../scss/mixins.scss";
     @use "../scss/cores.scss" as *;
+    @use "../scss/responsividade.scss" as resp;
     @use "sass:color";
 
     footer#footer {
+        @include resp.cellphone { flex-direction: column; height: fit-content; padding: 10px; }
         @include mixins.flex();
         color: white;
         height: 100vh;
@@ -92,6 +94,13 @@
 
     /* PRIMEIRA SECTION */
     #footer-cards-section-wrapper {
+        @include resp.cellphone {
+            transform: none;
+            left: auto;
+            position: static;
+            width: 100%;
+            transform: translateY(-10%);
+        }
         width: 90%;
         position: absolute;
         top: 0;
@@ -99,11 +108,17 @@
         transform: translate(-50%, -50%);
     }
     #footer-card-list {
+        @include resp.cellphone {
+            flex-direction: column;
+        }
         @include mixins.flex($g: 30px);
-
     }
 
     #footer-section-wrapper {
+        @include resp.cellphone {
+            flex-direction: column;
+            margin-top: -40px;
+        }
         @include mixins.flex($g: 20px);
         width: 90%;
         height: 55%;
@@ -112,18 +127,31 @@
 
     /* SEGUNDA SECTION */
     #footer-text-section-wrapper {
+        @include resp.cellphone {
+            text-align: left;
+            width: 100%;
+        }
         @include mixins.flex($d: column, $g: 15px, $ai: flex-start, $jc: space-between);
         height: 100%;
         width: 70%;
         h1 {
+            @include resp.cellphone {
+                font-size: 28pt;
+            }
             font-size: 4vw;
             font-weight: 100;
         }
         p {
+            @include resp.cellphone {
+                font-size: 9.5pt;
+            }
             line-height: 170%;
             font-size: 1.4vw;
         }
         ul {
+            @include resp.cellphone {
+                font-size: 20pt;
+            }
             @include mixins.flex($g: 20px);
             font-size: 3vw;
         }
@@ -131,6 +159,9 @@
 
     /* TERCEIRA SECTION */
     #footer-form-section-wrapper{
+        @include resp.cellphone {
+            flex-basis: 100%;
+        }
         flex-basis: 50%;
     }
 
@@ -140,6 +171,9 @@
         width: 100%;
 
         button {
+            @include resp.cellphone {
+                font-size: 9pt;
+            }
             padding: 15px;
             width: 100%;
             font-size: 1.5vw;
@@ -151,20 +185,28 @@
         }
     }
     #inputs-container {
+        @include resp.cellphone { flex-direction: column; }
         @include mixins.flex($ai: flex-start, $g: 20px);
         flex-wrap: wrap;
     }
     .input-container {
+        @include resp.cellphone {
+            flex-basis: none;
+            flex-grow: 0;
+            width: 100%;
+        }
         @include mixins.flex($d: column, $ai: flex-start);
         flex-basis: 45%;
         flex-grow: 1;
 
         label {
+            @include resp.cellphone { font-size: 11pt; }
             font-weight: bold;
             font-size: 1.3vw;
         }
 
         input, textarea {
+            @include resp.cellphone { font-size: 11pt; }
             width: 100%;
             padding: 10px;
             color: white;

@@ -18,8 +18,13 @@
 <style lang="scss" scoped>
     @use "../scss/mixins.scss";
     @use "../scss/cores.scss" as *;
+    @use "../scss/responsividade.scss" as resp;
 
     .footer-card {
+        @include resp.cellphone {
+            width: 100%;
+            height: fit-content;
+        }
         @include mixins.flex($d: column, $g: 20px);
         width: 100%;
         text-align: center;
@@ -31,15 +36,22 @@
         height: 230px;
 
         h2 {
+            @include resp.cellphone {
+                font-size: 11pt;
+            }
             font-weight: 100;
             font-size: 1.9vw;
         }
         p {
+            @include resp.cellphone {
+                font-size: 9pt;
+            }
             font-size: .9vw;
         }
     }
 
     .footer-card-icon {
+        @include resp.cellphone { font-size: 40pt; }
         font-size: 5vw;
     }
 </style>

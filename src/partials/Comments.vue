@@ -43,6 +43,7 @@
 
 <style lang="scss" scoped>
     @use "../scss/mixins.scss";
+    @use "../scss/responsividade.scss" as resp;
     @use "../scss/cores.scss" as *;
 
     #comments-article {
@@ -53,11 +54,18 @@
         margin-top: 100px;
 
         h1 {
+            @include resp.cellphone {
+                font-size: 21pt;
+            }
             font-size: 5vw;
             font-weight: 100;
         }
 
         p {
+            @include resp.cellphone {
+                font-size: 11pt;
+                widows: 100%;
+            }
             width: 70%;
             font-size: 1.6vw;
             text-align: center;
@@ -65,8 +73,14 @@
     }
 
     #comments-list-container {
+        @include resp.tablet {
+            width: 100%;
+        }
+        @include resp.cellphone {
+            flex-direction: column;
+        }
         @include mixins.flex($g: 20px);
-        margin-top: 30px;
+        margin-top: 30px;   
         width: 85%;
     }
 </style>

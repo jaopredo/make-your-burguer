@@ -10,8 +10,9 @@
 
 <style lang="scss">
     @use './scss/cores.scss' as *;
+    @use './scss/responsividade.scss' as resp;
     @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
-    
+
     #app {
         min-height: 100vh;
     }
@@ -33,6 +34,9 @@
         font-family: 'Open Sans';
     }
     .blue-link {
+        @include resp.cellphone {
+            font-size: 9pt;
+        }
         display: block;
         color: white;
         background: $default-blue;

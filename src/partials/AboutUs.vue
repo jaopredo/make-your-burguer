@@ -37,11 +37,15 @@
 
 <style scoped lang="scss">
     @use "../scss/mixins.scss";
+    @use "../scss/responsividade.scss" as resp;
     @use "../scss/cores.scss" as *;
 
 
-    $circles-size: 200px;
+    $circles-size: 17vw;
     .u-shape {
+        @include resp.cellphone {
+            right: 70px;
+        }
         background-color: $default-blue;
         width: $circles-size;
         height: $circles-size;
@@ -55,6 +59,7 @@
     }
 
     .u-shape-dashed {
+        @include resp.cellphone { left: 30px; }
         fill: $default-blue;
 
         width: $circles-size;
@@ -66,14 +71,27 @@
 
 
     #about-us-article {
+        @include resp.tablet {
+            height: 200vh;
+        }
         @include mixins.flex();
         height: 130vh;
     }
 
     #wrapper {
-        // @include mixins.flex();
+        @include resp.tablet {
+            width: 80vw;
+            max-width: none;
+            height: 100%;
+            max-height: 800px;
+        }
+        @include resp.cellphone {
+            @include mixins.flex($d: column);
+            // background: yellow;
+            height: 100%;
+            width: 100%;
+        }
         position: relative;
-        // background: red;
 
         max-width: 1300px;
         width: 80vw;
@@ -82,12 +100,29 @@
     }
 
     #about-us-section-container {
+        @include resp.tablet {
+            max-width: none;
+            width: 40vw;
+            height: 60%;
+            transform: translateX(-20%);
+            padding: 30px;
+        }
+        @include resp.cellphone {
+            height: 300px;
+            width: 180px;
+            transform: scale(1.5);
+
+            right: auto;
+            position: static;
+            border-radius: 15px;
+        }
+
         @include mixins.flex($d: column, $ai: flex-start, $g: 30px);
 
         position: absolute;
         right: 0;
 
-        width: 19vw;
+        width: 30vw;
         max-width: 500px;
 
         height: 100%;
@@ -98,18 +133,48 @@
         z-index: 1;
 
         h1 {
+            @include resp.tablet {
+                font-size: 5vw;
+            }
+            @include resp.cellphone {
+                font-size: 20pt;
+            }
             font-size: 3vw;
             font-weight: 100;
         }
 
         p {
+            @include resp.tablet {
+                font-size: 2vw;
+            }
             text-align: justify;
             font-size: 1.1vw;
             line-height: 130%;
         }
+
+        a {
+            @include resp.tablet {
+                font-size: 2vw;
+            }
+        }
     }
 
     #woman-business {
+        @include resp.tablet {
+            width: 35%;
+            height: 60%;
+
+            transform: translate(-40%, 90%);
+        }
+
+        @include resp.cellphone {
+            min-width: 0;
+            width: 200px;
+            height: 330px;
+            position: static;
+
+            transform: translate(0, 20%);
+        }
         z-index: 2;
 
         position: absolute;
@@ -129,6 +194,9 @@
     }
 
     #building {
+        @include resp.tablet {
+            display: none;
+        }
         width: 27%;
         border-radius: 30px;
 
